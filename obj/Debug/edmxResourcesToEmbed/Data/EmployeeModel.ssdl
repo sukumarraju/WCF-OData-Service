@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pubsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="pubsModelStoreContainer">
+    <EntitySet Name="employee" EntityType="pubsModel.Store.employee" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="char" Nullable="false" MaxLength="9" />
+    <Property Name="fname" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="minit" Type="char" MaxLength="1" />
+    <Property Name="lname" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="job_id" Type="smallint" Nullable="false" />
+    <Property Name="job_lvl" Type="tinyint" />
+    <Property Name="pub_id" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="hire_date" Type="datetime" Nullable="false" />
+  </EntityType>
+</Schema>

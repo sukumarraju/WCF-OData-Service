@@ -1,0 +1,5 @@
+E:\Ramblings\ODataService\ODataService\bin\ODataService.dll
+E:\Ramblings\ODataService\ODataService\bin\ODataService.pdb
+E:\Ramblings\ODataService\ODataService\obj\Debug\ResolveAssemblyReference.cache
+E:\Ramblings\ODataService\ODataService\obj\Debug\ODataService.dll
+E:\Ramblings\ODataService\ODataService\obj\Debug\ODataService.pdb

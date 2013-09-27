@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="pubsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="pubsModelStoreContainer">
+          <EntitySet Name="employee" EntityType="pubsModel.Store.employee" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="emp_id" />
+          </Key>
+          <Property Name="emp_id" Type="char" Nullable="false" MaxLength="9" />
+          <Property Name="fname" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="minit" Type="char" MaxLength="1" />
+          <Property Name="lname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="job_id" Type="smallint" Nullable="false" />
+          <Property Name="job_lvl" Type="tinyint" />
+          <Property Name="pub_id" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="hire_date" Type="datetime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pubsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="pubsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="employees" EntityType="pubsModel.employee" />
+        </EntityContainer>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="emp_id" />
+          </Key>
+          <Property Name="emp_id" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="true" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="minit" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="job_id" Type="Int16" Nullable="false" />
+          <Property Name="job_lvl" Type="Byte" />
+          <Property Name="pub_id" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="hire_date" Type="DateTime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pubsModelStoreContainer" CdmEntityContainer="pubsEntities">
+          <EntitySetMapping Name="employees"><EntityTypeMapping TypeName="pubsModel.employee"><MappingFragment StoreEntitySet="employee">
+            <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+            <ScalarProperty Name="fname" ColumnName="fname" />
+            <ScalarProperty Name="minit" ColumnName="minit" />
+            <ScalarProperty Name="lname" ColumnName="lname" />
+            <ScalarProperty Name="job_id" ColumnName="job_id" />
+            <ScalarProperty Name="job_lvl" ColumnName="job_lvl" />
+            <ScalarProperty Name="pub_id" ColumnName="pub_id" />
+            <ScalarProperty Name="hire_date" ColumnName="hire_date" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EmployeeModel">
+        <EntityTypeShape EntityType="pubsModel.employee" Width="1.5" PointX="0.75" PointY="0.75" Height="2.2496956380208331" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
